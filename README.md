@@ -5,3 +5,4 @@ To install simply run:
 `npm install`
 then:
 `bower install`
+from your command line tool.
