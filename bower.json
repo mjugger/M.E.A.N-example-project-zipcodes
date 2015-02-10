@@ -1,0 +1,28 @@
+{
+  "name": "meanExProject1",
+  "version": "0.1.0",
+  "authors": [
+    "mjugger <xaiox20@gmail.com>"
+  ],
+  "description": "An example mean stack project",
+  "keywords": [
+    "mean",
+    "mean",
+    "stack",
+    "example",
+    "project"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.13",
+    "bootstrap": "~3.3.2"
+  }
+}
