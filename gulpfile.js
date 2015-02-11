@@ -9,12 +9,21 @@ var less = require('gulp-less');
 var bootstrapLess = './bower_components/bootstrap/less';
 var boostrapJs = './bower_components/bootstrap';
 var angularJs = './bower_components/angular';
+var angularRs = './bower_components/angular-resource';
+var angularRt = './bower_components/angular-route';
 var appLess = './private/less';
 var appJs = './private/js';
 
 gulp.task('scripts',function(){
-	return gulp.src([angularJs+'/angular.js'])
+	return gulp.src([angularJs+'/angular.js',angularRs+'/angular-resource.js',angularRt+'/angular-route.js'])
 	.pipe(concat('components.js'))
+	.pipe(gulp.dest('./public/javascripts'));
+
+});
+
+gulp.task('my scripts',function(){
+	return gulp.src([appJs+'/*'])
+	.pipe(concat('myjs.js'))
 	.pipe(gulp.dest('./public/javascripts'));
 
 });
@@ -32,6 +41,7 @@ gulp.task('less', function() {
 gulp.task('watch', function () {
 	gulp.watch(bootstrapLess+'/**/*.less', ['less']);
 	gulp.watch(appLess+'/*.less', ['less']);
+	gulp.watch(appJs+'/*.js', ['my scripts']);
 });
 
 // reset server on change
@@ -47,4 +57,4 @@ gulp.task('gulp-mon', function() {
 	});
 });
 
-gulp.task('default', ['scripts','gulp-mon']);
+gulp.task('default', ['less','scripts','my scripts','gulp-mon']);

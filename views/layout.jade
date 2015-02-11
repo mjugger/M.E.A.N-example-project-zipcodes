@@ -1,11 +1,14 @@
 doctype html
-html
+html(ng-app="zipcodes")
 	head
+		base(href="/")
 		title= title
 		link(rel='stylesheet', href='/stylesheets/bootstrap.css')
 		link(rel='stylesheet', href='/stylesheets/app.css')
 		script(src="/javascripts/components.js")
+		script(src="/javascripts/myjs.js")
 	body
 		div.jumbotron
 		div.container
-		block content
+			ng-view
+			block content
